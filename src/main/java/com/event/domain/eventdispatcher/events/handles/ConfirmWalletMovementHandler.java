@@ -1,14 +1,14 @@
 package com.event.domain.eventdispatcher.events.handles;
 
 import com.event.domain.eventdispatcher.entity.InvoiceResponse;
-import com.event.domain.eventdispatcher.events.BenefitRegisteredInvoice;
+import com.event.domain.eventdispatcher.events.BenefitInvoiceRegistered;
 import com.event.domain.eventdispatcher.interfaces.EventHandler;
 import com.google.gson.Gson;
 
-public class ConfirmWalletMovementHandler implements EventHandler<BenefitRegisteredInvoice> {
+public class ConfirmWalletMovementHandler implements EventHandler<BenefitInvoiceRegistered> {
 
     @Override
-    public void handle(final BenefitRegisteredInvoice event) {
+    public void handle(final BenefitInvoiceRegistered event) {
         System.out.println("--- Dados da Retorno do Invoice ---");
         System.out.println(new Gson().toJson(event.getInvoiceResponse()));
 

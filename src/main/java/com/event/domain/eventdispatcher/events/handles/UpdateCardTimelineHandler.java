@@ -1,13 +1,13 @@
 package com.event.domain.eventdispatcher.events.handles;
 
 import com.event.domain.eventdispatcher.entity.InvoiceResponse;
-import com.event.domain.eventdispatcher.events.BenefitRegisteredInvoice;
+import com.event.domain.eventdispatcher.events.BenefitInvoiceRegistered;
 import com.event.domain.eventdispatcher.interfaces.EventHandler;
 
-public class UpdateCardTimelineHandler implements EventHandler<BenefitRegisteredInvoice> {
+public class UpdateCardTimelineHandler implements EventHandler<BenefitInvoiceRegistered> {
 
     @Override
-    public void handle(final BenefitRegisteredInvoice event) {
+    public void handle(final BenefitInvoiceRegistered event) {
         updateCardTimeline(event.getInvoiceResponse());
     }
 

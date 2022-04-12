@@ -6,11 +6,14 @@ import com.google.gson.Gson;
 
 import java.time.LocalDateTime;
 
-public class BenefitRegistered implements Event {
+public class BenefitRegistered extends Event {
 
     private LocalDateTime dateTimeOccurred;
     private Benefit benefit;
-    private EventType eventType = EventType.BENEFIT_REGISTERED;
+
+    public BenefitRegistered() {
+        super(EventType.BENEFIT_REGISTERED);
+    }
 
     @Override
     public void registerEvent(String payload) {
@@ -24,10 +27,6 @@ public class BenefitRegistered implements Event {
 
     public Benefit getBenefit() {
         return benefit;
-    }
-
-    public EventType getEventType() {
-        return eventType;
     }
 
     private Benefit convert(String payload){
